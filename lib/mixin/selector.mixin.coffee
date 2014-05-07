@@ -1,5 +1,6 @@
 # # Select2 Instance
 Select2Mixins.Selector =
+  # ##### setSelector()
   setSelector: ( selector ) ->
     Match.test selector, String
     @setData 'selector', selector

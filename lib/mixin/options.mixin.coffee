@@ -18,7 +18,8 @@ Select2Mixins.Options =
     options.component = @
     @setOptions _.defaults( options, @defaultOptions )
 
-  # ##### presetOptions()
+  # ##### getPresetOptions()
+  # Retrieves any presetOptions objects that have a key matching the component selector
   getPresetOptions: ->
     unless @presetOptions
       if @getSelector() of @presetOptions

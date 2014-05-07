@@ -8,7 +8,6 @@
 #   + `destroyed` logs when the component is detroyed
 #   + `initialized` logs the inital state of the datatable after data is acquired
 #   + `options` logs the datatables options for that instantiated component
-#   + `fnServerData` logs each request to the server by the component
 # ##### server examples
 #   + `"query"` : will log the base and filtered queries for every subscription.
 #   + `"added"` : will log all documents added to subscriptions.
