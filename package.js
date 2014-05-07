@@ -32,6 +32,6 @@ Package.on_test(function (api) {
   ], ['client', 'server']);
 
   api.add_files([
-    'tests/jquery-select2.test.coffee'
+    'tests/select2.test.coffee'
   ], ['client', 'server']);
 });

@@ -1,0 +1,17 @@
+<template name="select2">
+    <div id="{{selector}}" class="select2-container">
+        {{#if UI.contentBlock }}
+            {{> UI.contentBlock }}
+        {{else}}
+            {{#with chooseTemplate template }}
+                {{#with .. }}     {{! original arguments to select2}}
+                    {{> .. }}     {{! return value from Template.select2.chooseTemplate( template ) }}
+                {{/with}}
+            {{/with}}
+        {{/if}}
+    </div>
+</template>
+
+<template name="default_select2_template">
+    <code class="{{../../styles}}">default_select2_template needs to be setup</code>
+</template>
