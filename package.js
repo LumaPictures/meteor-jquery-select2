@@ -16,11 +16,47 @@ Package.on_use(function (api, where) {
     'spacebars'
   ], [ 'client' ]);
 
-  api.export([], ['client','server']);
+  api.export([
+    'Select2Mixins',
+    'Select2Options',
+    'Select2Component'
+  ], ['client','server']);
+
+  /* External Libraries */
+  api.add_files([], ['client']);
+
+  /* Mixins */
+  api.add_files([
+    'lib/mixins/select2.mixin.coffee',
+    'lib/mixins/debug.mixin.coffee'
+  ], [ 'client', 'server' ]);
 
   api.add_files([
-    'lib/jquery-select2.coffee'
+    'lib/mixins/initialize.mixin.coffee',
+    'lib/mixins/destroy.mixin.coffee',
+    'lib/mixins/options.mixin.coffee',
+    'lib/mixins/selector.mixin.coffee',
+    'lib/mixins/template.mixin.coffee',
+    'lib/mixins/utility.mixin.coffee'
+  ], [ 'client' ]);
+
+  /* Options */
+  api.add_files([
+    'lib/options/select2.option.coffee'
   ], [ 'client', 'server' ]);
+
+  /* Component */
+  api.add_files([
+    'lib/select2.component.coffee'
+  ], [ 'client', 'server']);
+
+  api.add_files([
+    'lib/select2.html',
+    'lib/select2.client.coffee'
+  ], [ 'client' ]);
+
+  /* Plugins */
+  api.add_files([], [ 'client' ]);
 });
 
 Package.on_test(function (api) {
@@ -32,6 +68,7 @@ Package.on_test(function (api) {
   ], ['client', 'server']);
 
   api.add_files([
-    'tests/select2.test.coffee'
+    'tests/select2.options.mixin.test.coffee',
+    'tests/select2.template.mixin.test.coffee'
   ], ['client', 'server']);
 });

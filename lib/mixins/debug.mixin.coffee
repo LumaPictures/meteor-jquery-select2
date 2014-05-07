@@ -33,4 +33,4 @@ Select2Mixins.Debug =
         if message.indexOf( Select2.isDebug() ) isnt -1 or Select2.isDebug() is "all"
           console.log "select2:#{ message } ->", object
 
-Select2.Debug.debug = false if Meteor.isServer
+Select2Mixins.Debug.debug = false if Meteor.isServer

@@ -13,7 +13,7 @@ if Meteor.isClient
   # The code below is an example of how to set some example default options for display and language options.
   #
   # `Select2.defaultOptions = _.extend {}, Select2Options.display, Select2Options.language`
-  Select2.defaultOptions = {}
+  Select2Component.defaultOptions = {}
 
   # The code below is an example of how to set some example preset options for dark and light layouts.
   #
@@ -27,9 +27,9 @@ if Meteor.isClient
   #     background: "#000000"
   #     color: "#FFFFFF"
   # ```
-  Select2.presetOptions = {}
+  Select2Component.presetOptions = {}
 
 # Components are client only by default, but if you need to have a presence on the server you can define server mixins.
 else if Meteor.isServer
   # `Select2Component = _.extend {}, Select2Mixins.Debug`
-  Select2Component = _.extend {}, Select2Mixins.Debug`
+  Select2Component = _.extend {}, Select2Mixins.Debug
