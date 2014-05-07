@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><title>select2.client</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="select2.client"><meta name="groc-project-path" content="lib/select2.client.coffee"><meta name="groc-github-url" content="https://github.com/lumapictures/meteor-jquery-select2"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/lumapictures/meteor-jquery-select2/blob/master/lib/select2.client.coffee">lib/select2.client.coffee</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="select2-client">Select2 Client</h1>
+
+<h5 id="extending-the-template">Extending the Template</h5>
+
+<p><code>Template.select2</code> is extended with <code>Select2Component</code>'s methods so that the template callbacks can execute
+<code>Select2Component</code> instance methods. In truth <code>Template.select2</code> is the actual <code>Select2Component</code>.</p></div></div><div class="code"><div class="wrapper"><span class="nv">Template.select2 = </span><span class="nx">_</span><span class="p">.</span><span class="nx">extend</span> <span class="nx">Template</span><span class="p">.</span><span class="nx">select2</span><span class="p">,</span> <span class="nx">Select2Component</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h5 id="created">created()</h5>
+
+<p>This is the component constructor.</p></div></div><div class="code"><div class="wrapper"><span class="nv">Template.select2.created = </span><span class="nf">-&gt;</span>
+  <span class="nv">templateInstance = </span><span class="nx">@</span>
+  <span class="nv">instantiatedComponent = </span><span class="nx">templateInstance</span><span class="p">.</span><span class="nx">__component__</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">prepareSelector</span><span class="p">()</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">prepareOptions</span><span class="p">()</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;created&quot;</span><span class="p">,</span> <span class="nx">@</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h5 id="rendered">rendered()</h5>
+
+<p>When the component is first rendered the component is initialized  and <code>templateInstance.__component__</code> is the <code>this</code> context</p></div></div><div class="code"><div class="wrapper"><span class="nv">Template.select2.rendered = </span><span class="nf">-&gt;</span>
+  <span class="nv">templateInstance = </span><span class="nx">@</span>
+  <span class="nv">instantiatedComponent = </span><span class="nx">templateInstance</span><span class="p">.</span><span class="nx">__component__</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;rendered&quot;</span><span class="p">,</span> <span class="nx">@</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">initialize</span><span class="p">()</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><h5 id="destroyed">destroyed()</h5>
+
+<p>The <code>Select2Component.destroy()</code> method is a convenient place to do teardown and cleanup.</p></div></div><div class="code"><div class="wrapper"><span class="nv">Template.select2.destroyed = </span><span class="nf">-&gt;</span>
+  <span class="nv">templateInstance = </span><span class="nx">@</span>
+  <span class="nv">instantiatedComponent = </span><span class="nx">templateInstance</span><span class="p">.</span><span class="nx">__component__</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+  <span class="nx">instantiatedComponent</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;destroyed&quot;</span><span class="p">,</span> <span class="nx">@</span></div></div></div></div></body></html>

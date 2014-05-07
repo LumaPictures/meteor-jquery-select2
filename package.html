@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><title>package</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="package"><meta name="groc-project-path" content="package.js"><meta name="groc-github-url" content="https://github.com/lumapictures/meteor-jquery-select2"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/lumapictures/meteor-jquery-select2/blob/master/package.js">package.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">Package</span><span class="p">.</span><span class="nx">describe</span><span class="p">({</span>
+  <span class="nx">summary</span><span class="o">:</span> <span class="s2">&quot;A Blaze UI select2 component that supports reactive search.&quot;</span>
+<span class="p">});</span>
+
+<span class="nx">Package</span><span class="p">.</span><span class="nx">on_use</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="nx">where</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">api</span><span class="p">.</span><span class="nx">use</span><span class="p">([</span>
+    <span class="s1">&#39;coffeescript&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;underscore&#39;</span>
+  <span class="p">],[</span> <span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span> <span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>for helpers</p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">use</span><span class="p">([</span>
+    <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ui&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;templating&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;spacebars&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span> <span class="p">]);</span>
+
+  <span class="nx">api</span><span class="p">.</span><span class="kr">export</span><span class="p">([</span>
+    <span class="s1">&#39;Select2Mixins&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Select2Options&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Select2Component&#39;</span>
+  <span class="p">],</span> <span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">,</span><span class="s1">&#39;server&#39;</span><span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>External Libraries </p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([],</span> <span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Mixins </p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;lib/mixins/select2.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/debug.mixin.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span> <span class="p">]);</span>
+
+  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;lib/mixins/initialize.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/destroy.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/options.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/selector.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/template.mixin.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/mixins/utility.mixin.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span> <span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Options </p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;lib/options/select2.option.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span> <span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Component </p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;lib/select2.component.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span><span class="p">]);</span>
+
+  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;lib/select2.html&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lib/select2.client.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span> <span class="p">]);</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Plugins </p></div></div><div class="code"><div class="wrapper">  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([],</span> <span class="p">[</span> <span class="s1">&#39;client&#39;</span> <span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="nx">Package</span><span class="p">.</span><span class="nx">on_test</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">api</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">api</span><span class="p">.</span><span class="nx">use</span><span class="p">([</span>
+    <span class="s1">&#39;coffeescript&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jquery-select2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tinytest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test-helpers&#39;</span>
+  <span class="p">],</span> <span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span><span class="p">]);</span>
+
+  <span class="nx">api</span><span class="p">.</span><span class="nx">add_files</span><span class="p">([</span>
+    <span class="s1">&#39;tests/select2.options.mixin.test.coffee&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tests/select2.template.mixin.test.coffee&#39;</span>
+  <span class="p">],</span> <span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span><span class="p">]);</span>
+<span class="p">});</span></div></div></div></div></body></html>
