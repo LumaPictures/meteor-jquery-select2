@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "jquery-select2": {
+      "path": ".."
+    },
+    "luma-ui": {}
+  }
+}
