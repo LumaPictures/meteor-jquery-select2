@@ -1,4 +1,4 @@
-# ## Utility Methods
+# # Select2 Utility
 Select2Mixins.Utility =
   # ##### getTemplateInstance()
   getTemplateInstance: ->
