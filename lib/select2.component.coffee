@@ -6,6 +6,7 @@ if Meteor.isClient
     Select2Mixins.Destroy,
     Select2Mixins.Options,
     Select2Mixins.Selector,
+    Select2Mixins.Placeholder,
     Select2Mixins.Template,
     Select2Mixins.Utility,
     Select2Mixins.Debug

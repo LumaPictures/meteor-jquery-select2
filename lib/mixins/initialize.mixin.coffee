@@ -13,3 +13,23 @@ Select2Mixins.Initialize =
   # ##### initializeSelect2()
   initializeSelect2: ->
     @setSelect2 $("##{ @getSelector() }").select2( @getOptions() )
+    if @isDisabled()
+      @disableSelect2()
+    if @isReadOnly()
+      @readOnlySelect2()
+
+  # ##### disableSelect2()
+  disableSelect2: ->
+    @setSelect2 $("##{ @getSelector() }").select2( "enable", false )
+
+  # ##### disableSelect2()
+  enableSelect2: ->
+    @setSelect2 $("##{ @getSelector() }").select2( "enable", true )
+
+  # ##### readOnlySelect2()
+  readOnlySelect2: ->
+    @setSelect2 $("##{ @getSelector() }").select2( "readonly", true )
+
+  # ##### writableSelect2()
+  writableSelect2: ->
+    @setSelect2 $("##{ @getSelector() }").select2( "readonly", false )

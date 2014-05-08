@@ -38,6 +38,7 @@ Package.on_use(function (api, where) {
     'lib/mixins/destroy.mixin.coffee',
     'lib/mixins/options.mixin.coffee',
     'lib/mixins/selector.mixin.coffee',
+    'lib/mixins/placeholder.mixin.coffee',
     'lib/mixins/template.mixin.coffee',
     'lib/mixins/utility.mixin.coffee'
   ], [ 'client' ]);

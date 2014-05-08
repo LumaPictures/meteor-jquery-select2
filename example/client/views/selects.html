@@ -1,0 +1,279 @@
+<template name="selectsView">
+    <form>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Fixed select: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        tabindex="1"
+                        options=fixedSelect
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Liquid select: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        tabindex="2"
+                        options=liquidSelect
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Full width select: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        tabindex="3"
+                        options=fullWidthSelect
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Select with search: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        tabindex="5"
+                    }}
+                    {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Select with optgroups: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=statePlaceholder
+                        tabindex="4"
+                    }}
+                        {{> stateOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Disabled select: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        styles="select select-disabled"
+                        tabindex="6"
+                        options=disabledSelect
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Clear results: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        options=clearResults
+                        tabindex="7"
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Select with minimum: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        styles="minimum-select"
+                        tabindex="8"
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Multiple with search: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=teamsPlaceholder
+                        multiple="multiple"
+                        tabindex="9"
+                    }}
+                        {{> teamOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">With maximum input: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=teamsPlaceholder
+                        multiple="multiple"
+                        tabindex="10"
+                        options=maximumMultipleSelect
+                    }}
+                        {{> teamOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Minimum characters: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=teamsPlaceholder
+                        multiple="multiple"
+                        tabindex="11"
+                        options=minimumMultipleSelect
+                    }}
+                        {{> teamOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">Disabled state: </label>
+
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=teamsPlaceholder
+                        multiple="multiple"
+                        tabindex="12"
+                        options=disabledSelect
+                    }}
+                        {{> teamOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+        </div>
+    </form>
+</template>
+
+<template name="teamOptions">
+    <optgroup label="NFC EAST">
+        <option>Dallas Cowboys</option>
+        <option>New York Giants</option>
+        <option>Philadelphia Eagles</option>
+        <option>Washington Redskins</option>
+    </optgroup>
+    <optgroup label="NFC NORTH">
+        <option>Chicago Bears</option>
+        <option>Detroit Lions</option>
+        <option>Green Bay Packers</option>
+        <option>Minnesota Vikings</option>
+    </optgroup>
+    <optgroup label="NFC SOUTH">
+        <option>Atlanta Falcons</option>
+        <option>Carolina Panthers</option>
+        <option>New Orleans Saints</option>
+        <option>Tampa Bay Buccaneers</option>
+    </optgroup>
+    <optgroup label="NFC WEST">
+        <option>Arizona Cardinals</option>
+        <option>St. Louis Rams</option>
+        <option>San Francisco 49ers</option>
+        <option>Seattle Seahawks</option>
+    </optgroup>
+    <optgroup label="AFC EAST">
+        <option>Buffalo Bills</option>
+        <option>Miami Dolphins</option>
+        <option>New England Patriots</option>
+        <option>New York Jets</option>
+    </optgroup>
+</template>
+
+<template name="countryOptions">
+    <option value="Cambodia">Cambodia</option>
+    <option value="Cameroon">Cameroon</option>
+    <option value="Canada">Canada</option>
+    <option value="Cape Verde">Cape Verde</option>
+    <option value="Cayman Islands">Cayman Islands</option>
+    <option value="Central African Republic">Central African Republic</option>
+    <option value="Chad">Chad</option>
+    <option value="Chile">Chile</option>
+    <option value="China">China</option>
+    <option value="Christmas Island">Christmas Island</option>
+    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Comoros">Comoros</option>
+    <option value="Congo">Congo</option>
+    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+    <option value="Cook Islands">Cook Islands</option>
+    <option value="Costa Rica">Costa Rica</option>
+    <option value="Cote D'ivoire">Cote D'ivoire</option>
+    <option value="Croatia">Croatia</option>
+    <option value="Cuba">Cuba</option>
+    <option value="Cyprus">Cyprus</option>
+    <option value="Czech Republic">Czech Republic</option>
+    <option value="Denmark">Denmark</option>
+</template>
+
+<template name="stateOptions">
+    <optgroup label="Alaskan/Hawaiian Time Zone">
+        <option value="AK">Alaska</option>
+        <option value="HI">Hawaii</option>
+    </optgroup>
+    <optgroup label="Pacific Time Zone">
+        <option value="CA">California</option>
+        <option value="NV">Nevada</option>
+        <option value="OR">Oregon</option>
+        <option value="WA">Washington</option>
+    </optgroup>
+    <optgroup label="Mountain Time Zone">
+        <option value="AZ">Arizona</option>
+        <option value="CO">Colorado</option>
+        <option value="ID">Idaho</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NM">New Mexico</option>
+        <option value="ND">North Dakota</option>
+        <option value="UT">Utah</option>
+        <option value="WY">Wyoming</option>
+    </optgroup>
+    <optgroup label="Central Time Zone">
+        <option value="AL">Alabama</option>
+        <option value="AR">Arkansas</option>
+        <option value="IL">Illinois</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+    </optgroup>
+    <optgroup label="Eastern Time Zone">
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="IN">Indiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+    </optgroup>
+</template>

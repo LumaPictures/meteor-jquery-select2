@@ -11,6 +11,7 @@ Template.select2.created = ->
   instantiatedComponent = templateInstance.__component__
   instantiatedComponent.prepareSelector()
   instantiatedComponent.prepareOptions()
+  instantiatedComponent.preparePlaceholder()
   instantiatedComponent.log "created", @
 
 # ##### rendered()
