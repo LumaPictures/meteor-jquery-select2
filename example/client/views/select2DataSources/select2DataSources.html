@@ -1,3 +1,19 @@
 <template name="select2DataSourcesView">
+    <form>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="col-sm-4 control-label">DOM Source: </label>
 
+                <div class="col-sm-8">
+                    {{#select2
+                        placeholder=countryPlaceholder
+                        tabindex="2"
+                    }}
+                        {{> countryOptions }}
+                    {{/select2}}
+                </div>
+            </div>
+
+        </div>
+    </form>
 </template>

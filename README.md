@@ -1,6 +1,7 @@
 # jquery-select2 [![Build Status](https://travis-ci.org/LumaPictures/meteor-jquery-select2.svg?branch=master)](https://travis-ci.org/LumaPictures/meteor-jquery-select2)
 ### A Blaze UI select2 component that supports reactive search.
 
+## [Official Docs](http://ivaynberg.github.io/select2/)
 ## [Live Example](http://jquery-select2.meteor.com)
 
 ## Local Example
@@ -43,6 +44,48 @@ If you need opt groups everything still works the same.
         </optgroup>
     {{/each}}
 {{/select2}}
+```
+
+### Data Sources
+
+#### DOM
+
+The easiest and least flexible way. Just place your options in the `select2` block helper and go.
+
+If you are not using a placeholder be sure to specify which option is selected by default or the `select2` component will be empty.
+
+```html
+{{#select2}}
+    <option value="option1" selected>Option 1</option>
+    <option value="option2" selected>Option 2</option>
+{{/select2}}
+```
+
+#### Array ( [milestone v0.2](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=1&state=open) )
+
+This method will cover most of your use cases, is quite flexible, and pretty freakin simple.
+
+By default the first element in the array will be selected unless you specify a placeholder.
+
+```html
+{{> select2 optionsArray=optionsArray }}
+```
+
+#### Subscription ( [milestone v0.3](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=2&state=open) )
+
+The most complex and powerful option of the three, very useful when you have a large set of options that is stored in a collection.
+
+This package automatically pages and searches extremely large collections by performing all searches on the server and providing
+its own publication. This works in a very similar fashion to my [ jQuery DataTables ](jquery-datatables.meteor.com) package.
+
+```html
+{{> select2 subscription="all_countries" }}
+```
+
+On the server you will have to publish a `Select2Component` publication or provide your own searchable publication.
+
+```coffeescript
+Select2Component.publish "all_countries", Countries, {}
 ```
 
 ### Events
@@ -132,7 +175,7 @@ Template.select2ExamplesPanelView.events
 $("#destroy-the-world").click -> $("#the-world").select2 "destroy"
 ```
 
-3. Pass in your own event map through the component ( not implemented yet! )
+3. Pass in your own event map through the component ( [ milestone v0.4 ](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=3&state=open) )
     * This technique is useful when you need to perform custom actions on selection events
     * Does not require a selector to be defined
 

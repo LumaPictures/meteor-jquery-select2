@@ -6,6 +6,16 @@ Router.addRoutes [{
     title: "jquery-select2"
     subtitle: "A Blaze UI select2 component that supports reactive search."
 },{
+  route: "officialDocs"
+  path: "http://ivaynberg.github.io/select2/"
+  external: true
+  page:
+    title: "Official Docs"
+    subtitle: "Select2 Pro"
+  nav:
+    priority: 999
+    icon: "icon-book"
+},{
   route: 'gitHub'
   path: "https://github.com/LumaPictures/meteor-jquery-select2"
   external: true

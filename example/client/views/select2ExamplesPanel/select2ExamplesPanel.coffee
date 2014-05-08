@@ -1,7 +1,8 @@
 # # select2ExamplesPanelView
 
 # ##### select2ExamplesPanelView.created()
-Template.select2ExamplesPanelView.created = -> return
+Template.select2ExamplesPanelView.created = ->
+  Session.setDefault Template.select2ExamplesPanelView.selector(), "select2ConfigurationsView"
 
 # ##### select2ExamplesPanelView.rendered()
 Template.select2ExamplesPanelView.rendered = -> return
@@ -12,6 +13,7 @@ Template.select2ExamplesPanelView.destroyed = -> return
 # ##### select2ExamplesPanelView.helpers()
 Template.select2ExamplesPanelView.helpers
   selector: -> return "select2-examples-panel-selector"
+  selectorOptions: -> return { width: "off" }
   selectedView: ->
     return Template[ Session.get Template.select2ExamplesPanelView.selector() ]
   options: -> return [{
