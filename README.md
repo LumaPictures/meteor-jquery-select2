@@ -251,7 +251,7 @@ This package provides no styles or assets to your app intentionally.
 All of the default select2 styles and assets are included in the `vendor` directory and can be loaded into your application via the following methods:
 
 ###### Load files by path
-    * Assumes your less / css files are one dir up from your app root
+  * Assumes your less / css files are one dir up from your app root
 
 `@import "../packages/jquery-select2/vendor/select2/select2.css";`
 
