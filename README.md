@@ -78,6 +78,45 @@ Template .select2ExamplesPanelView.events
   "select2-blur #country-selector": ( event, template ) -> console.log "blur"
 ```
 
+A non trivial usage, and what is currently being used in the example app.
+
+```html
+<template name="select2ExamplesPanelView">
+    {{#panel styles="panel-default select2-examples-panel" }}
+        {{#panelHeading icon="icon-menu5" title="Select2" }}
+            <div class="pull-left">
+                {{#select2 selector=selector tabindex="1"}}
+                    {{#each options }}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/each}}
+                {{/select2}}
+            </div>
+        {{/panelHeading}}
+        {{#panelBody}}
+            {{> selectedView }}
+        {{/panelBody}}
+    {{/panel}}
+</template>
+```
+
+```coffeescript
+Template.select2ExamplesPanelView.helpers
+  selector: -> return "select2-examples-panel-selector"
+  selectedView: ->
+    return Template[ Session.get Template.select2ExamplesPanelView.selector() ]
+  options: -> return [{
+    value: "select2ConfigurationsView"
+    label: "Configurations"
+  }, {
+    value: "select2DataSourcesView"
+    label: "Data Sources"
+  }]
+
+Template.select2ExamplesPanelView.events
+  "change #select2-examples-panel-selector": ( event, template ) ->
+    Session.set event.target.id, event.val
+```
+
 2. Provide a selector and use jQuery
     * This technique is useful when a selector needs to respond to external changes
     * NOTE : All selectors must be unique in the page scope

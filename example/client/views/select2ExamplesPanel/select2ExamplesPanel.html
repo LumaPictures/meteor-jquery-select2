@@ -2,9 +2,10 @@
     {{#panel styles="panel-default select2-examples-panel" }}
         {{#panelHeading icon="icon-menu5" title="Select2" }}
             <div class="pull-left">
-                {{#select2 selector="select2-examples-panel-selector" tabindex="1"}}
-                    <option value="select2ConfigurationsView" selected>Configurations</option>
-                    <option value="select2DataSourcesView">Data Sources</option>
+                {{#select2 selector=selector tabindex="1"}}
+                    {{#each options }}
+                        <option value="{{value}}">{{label}}</option>
+                    {{/each}}
                 {{/select2}}
             </div>
         {{/panelHeading}}
