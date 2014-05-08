@@ -23,7 +23,9 @@ Package.on_use(function (api, where) {
   ], ['client','server']);
 
   /* External Libraries */
-  api.add_files([], ['client']);
+  api.add_files([
+    'vendor/select2/select2.js'
+  ], ['client']);
 
   /* Mixins */
   api.add_files([

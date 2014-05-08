@@ -12,12 +12,17 @@
 
 <template name="default_select2_template">
     {{#with ../.. }}
-    <select data-placeholder="{{#if placeholder }}{{placeholder}}{{else}}Select a Choice{{/if}}"
-            class="{{styles}}"
-            tabindex="{{tabindex}}">
-        {{#if UI.contentBlock }}
-            {{> UI.contentBlock }}
-        {{/if}}
-    </select>
+        <select id="{{selector}}"
+                data-placeholder="{{placeholder}}"
+                class="{{styles}}"
+                tabindex="{{tabindex}}"
+                >
+            {{#if placeholder }}
+                <option></option>
+            {{/if}}
+            {{#if UI.contentBlock }}
+                {{> UI.contentBlock }}
+            {{/if}}
+        </select>
     {{/with}}
 </template>
