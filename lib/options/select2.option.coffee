@@ -4,4 +4,4 @@
 Select2Options =
   defaults:
     minimumResultsForSearch: "5"
-    width: 200
+    width: "off"

@@ -12,3 +12,38 @@
 
 /* Fonts */
 @import "../packages/luma-ui/less/fonts.import.less";
+
+.select2-examples-panel {
+  .panel-heading {
+    h6 {
+      font-size: 24px;
+      font-weight: bold;
+      i {
+        font-size: 32px;
+      }
+    }
+    .pull-left {
+      .select2-container {
+        margin-top: 15px;
+        .select2-choice {
+          background-color: transparent;
+          .select2-arrow {
+            b {
+              background: none;
+              width: 0;
+              height: 0;
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+              border-top: 6px solid #FFFFFF;
+            }
+          }
+        }
+        .select2-chosen {
+          font-size: 13px;
+          font-weight: bold;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
