@@ -47,9 +47,38 @@ If you need opt groups everything still works the same.
 
 ### Events
 
-There are two ways you can bind events to a select2 component.
+There are several ways you can bind events to a select2 component.
 
-1. Provide a selector and use jQuery / Template events
+1. Provide a selector and use `Template.yourView.events`
+
+Assuming you have a template view like this :
+
+```html
+<template name="yourView">
+    {{#panel}}
+        {{#select2 selector="country-selector" }}
+            {{> countries }}
+        {{/select2}}
+    {{/panel}}
+</template>
+```
+
+```coffeescript
+Template .select2ExamplesPanelView.events
+  "change #country-selector": ( event, template ) -> console.log "change "+JSON.stringify({val:event.val, added:event.added, removed:event.removed})
+  "select2-opening #country-selector": ( event, template ) -> console.log "opening"
+  "select2-open #country-selector": ( event, template ) -> console.log "open"
+  "select2-close #country-selector": ( event, template ) -> console.log "close"
+  "select2-highlight #country-selector": ( event, template )-> console.log "highlighted val="+ event.val+" choice="+ JSON.stringify(event.choice)
+  "select2-selecting #country-selector": ( event, template ) -> console.log "selecting val="+ event.val+" choice="+ JSON.stringify(event.choice)
+  "select2-removing #country-selector": ( event, template ) -> console.log "removing val="+ event.val+" choice="+ JSON.stringify(event.choice)
+  "select2-removed #country-selector": ( event, template ) -> console.log "removed val="+ event.val+" choice="+ JSON.stringify(event.choice)
+  "select2-loaded #country-selector": ( event, template ) -> console.log "loaded (data property omitted for brevity)"
+  "select2-focus #country-selector": ( event, template ) -> console.log "focus"
+  "select2-blur #country-selector": ( event, template ) -> console.log "blur"
+```
+
+2. Provide a selector and use jQuery
     * This technique is useful when a selector needs to respond to external changes
     * NOTE : All selectors must be unique in the page scope
 
@@ -64,7 +93,7 @@ There are two ways you can bind events to a select2 component.
 $("#destroy-the-world").click -> $("#the-world").select2 "destroy"
 ```
 
-2. Pass in your own event map through the component
+3. Pass in your own event map through the component ( not implemented yet! )
     * This technique is useful when you need to perform custom actions on selection events
     * Does not require a selector to be defined
 
