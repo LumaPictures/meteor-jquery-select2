@@ -57,7 +57,7 @@ If you are not using a placeholder be sure to specify which option is selected b
 ```html
 {{#select2}}
     <option value="option1" selected>Option 1</option>
-    <option value="option2" selected>Option 2</option>
+    <option value="option2">Option 2</option>
 {{/select2}}
 ```
 
@@ -76,7 +76,7 @@ By default the first element in the array will be selected unless you specify a 
 The most complex and powerful option of the three, very useful when you have a large set of options that is stored in a collection.
 
 This package automatically pages and searches extremely large collections by performing all searches on the server and providing
-its own publication. This works in a very similar fashion to my [ jQuery DataTables ](jquery-datatables.meteor.com) package.
+its own publication. This works in a very similar fashion to my [ jquery-datatables package ](https://atmospherejs.com/package/jquery-datatables).
 
 ```html
 {{> select2 subscription="all_countries" }}
@@ -92,7 +92,7 @@ Select2Component.publish "all_countries", Countries, {}
 
 There are several ways you can bind events to a select2 component.
 
-1. Provide a selector and use `Template.yourView.events`
+###### Provide a selector and use `Template.yourView.events`
 
 Assuming you have a template view like this :
 
@@ -108,17 +108,44 @@ Assuming you have a template view like this :
 
 ```coffeescript
 Template .select2ExamplesPanelView.events
-  "change #country-selector": ( event, template ) -> console.log "change "+JSON.stringify({val:event.val, added:event.added, removed:event.removed})
-  "select2-opening #country-selector": ( event, template ) -> console.log "opening"
-  "select2-open #country-selector": ( event, template ) -> console.log "open"
-  "select2-close #country-selector": ( event, template ) -> console.log "close"
-  "select2-highlight #country-selector": ( event, template )-> console.log "highlighted val="+ event.val+" choice="+ JSON.stringify(event.choice)
-  "select2-selecting #country-selector": ( event, template ) -> console.log "selecting val="+ event.val+" choice="+ JSON.stringify(event.choice)
-  "select2-removing #country-selector": ( event, template ) -> console.log "removing val="+ event.val+" choice="+ JSON.stringify(event.choice)
-  "select2-removed #country-selector": ( event, template ) -> console.log "removed val="+ event.val+" choice="+ JSON.stringify(event.choice)
-  "select2-loaded #country-selector": ( event, template ) -> console.log "loaded (data property omitted for brevity)"
-  "select2-focus #country-selector": ( event, template ) -> console.log "focus"
-  "select2-blur #country-selector": ( event, template ) -> console.log "blur"
+  "change #country-selector": ( event, template ) ->
+    console.log "change", {
+      val:event.val
+      added:event.added
+      removed:event.removed
+    }
+  "select2-opening #country-selector": ( event, template ) ->
+    console.log "opening"
+  "select2-open #country-selector": ( event, template ) ->
+    console.log "open"
+  "select2-close #country-selector": ( event, template ) ->
+    console.log "close"
+  "select2-highlight #country-selector": ( event, template )->
+    console.log "highlighted", {
+      val: event.val
+      choice: event.choice
+    }
+  "select2-selecting #country-selector": ( event, template ) ->
+    console.log "selecting", {
+      val: event.val
+      choice: event.choice
+    }
+  "select2-removing #country-selector": ( event, template ) ->
+    console.log "removing", {
+      val: event.val
+      choice: event.choice
+    }
+  "select2-removed #country-selector": ( event, template ) ->
+    console.log "removed", {
+      val: event.val
+      choice: event.choice
+    }
+  "select2-loaded #country-selector": ( event, template ) ->
+    console.log "loaded (data property omitted for brevity)"
+  "select2-focus #country-selector": ( event, template ) ->
+    console.log "focus"
+  "select2-blur #country-selector": ( event, template ) ->
+    console.log "blur"
 ```
 
 A non trivial usage, and what is currently being used in the example app.
@@ -160,7 +187,7 @@ Template.select2ExamplesPanelView.events
     Session.set event.target.id, event.val
 ```
 
-2. Provide a selector and use jQuery
+###### Provide a selector and use jQuery
     * This technique is useful when a selector needs to respond to external changes
     * NOTE : All selectors must be unique in the page scope
 
@@ -175,7 +202,7 @@ Template.select2ExamplesPanelView.events
 $("#destroy-the-world").click -> $("#the-world").select2 "destroy"
 ```
 
-3. Pass in your own event map through the component ( [ milestone v0.4 ](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=3&state=open) )
+###### Pass in your own event map through the component ( [ milestone v0.4 ](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=3&state=open) )
     * This technique is useful when you need to perform custom actions on selection events
     * Does not require a selector to be defined
 
@@ -223,12 +250,12 @@ This package provides no styles or assets to your app intentionally.
 
 All of the default select2 styles and assets are included in the `vendor` directory and can be loaded into your application via the following methods:
 
-1. Load files by path
+###### Load files by path
     * Assumes your less / css files are one dir up from your app root
 
 `@import "../packages/jquery-select2/vendor/select2/select2.css";`
 
-2. Symlink the whole library
+###### Symlink the whole library dir
 
 ```shell
 $ cd public && ln -s ../packages/jquery-select2/vendor/select2 ./
