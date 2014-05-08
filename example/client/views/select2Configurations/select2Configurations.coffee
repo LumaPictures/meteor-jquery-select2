@@ -1,16 +1,16 @@
-# # selectsView
+# # select2ConfigurationsView
 
-# ##### selectsView.created()
-Template.selectsView.created = -> return
+# ##### select2ConfigurationsView.created()
+Template.select2ConfigurationsView.created = -> return
 
-# ##### selectsView.rendered()
-Template.selectsView.rendered = -> return
+# ##### select2ConfigurationsView.rendered()
+Template.select2ConfigurationsView.rendered = -> return
 
-# ##### selectsView.destroyed()
-Template.selectsView.destroyed = -> return
+# ##### select2ConfigurationsView.destroyed()
+Template.select2ConfigurationsView.destroyed = -> return
 
-# ##### selectsView.helpers()
-Template.selectsView.helpers
+# ##### select2ConfigurationsView.helpers()
+Template.select2ConfigurationsView.helpers
   countryPlaceholder: -> return "Choose a Country..."
   teamsPlaceholder: -> return "Your Favorite Football Team"
   statePlaceholder: -> return "Choose a State..."
@@ -43,5 +43,5 @@ Template.selectsView.helpers
     width: "100%"
   }
 
-# ##### selectsView.events()
-Template .selectsView.events {}
+# ##### select2ConfigurationsView.events()
+Template .select2ConfigurationsView.events {}

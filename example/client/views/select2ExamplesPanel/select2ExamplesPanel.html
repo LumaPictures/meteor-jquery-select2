@@ -1,0 +1,14 @@
+<template name="select2ExamplesPanel">
+    {{#panel}}
+        {{#panelHeading icon="icon-menu5" title="Select2" }}
+            <div class="pull-left">
+                {{#select2 tabindex="1"}}
+                    <option value="Configurations" selected>Configurations</option>
+                {{/select2}}
+            </div>
+        {{/panelHeading}}
+        {{#panelBody}}
+            {{> select2ConfigurationsView }}
+        {{/panelBody}}
+    {{/panel}}
+</template>

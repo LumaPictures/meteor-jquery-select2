@@ -49,8 +49,9 @@ If you need opt groups everything still works the same.
 
 There are two ways you can bind events to a select2 component.
 
-1. Provide a selector and use jQuery / Template events ( note all selectors must be unique in the page scope )
+1. Provide a selector and use jQuery / Template events
     * This technique is useful when a selector needs to respond to external changes
+    * NOTE : All selectors must be unique in the page scope
 
 ```html
 <input type="button" id="destroy-the-world" class="btn" value="KABOOM!">
@@ -63,8 +64,9 @@ There are two ways you can bind events to a select2 component.
 $("#destroy-the-world").click -> $("#the-world").select2 "destroy"
 ```
 
-2. Pass in your own event map through the component ( does not require a selector to be defined )
+2. Pass in your own event map through the component
     * This technique is useful when you need to perform custom actions on selection events
+    * Does not require a selector to be defined
 
 ```html
 {{#select2 placeholder="Choose a Country" selector="the-world" events=logAllEvents }}
@@ -91,17 +93,17 @@ Note: This method is identical to specifying a selector and saying
 
 ```javascript
 $("#your-selector")
-    .on("change", function(e) { log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); })
-    .on("select2-opening", function() { log("opening"); })
-    .on("select2-open", function() { log("open"); })
-    .on("select2-close", function() { log("close"); })
-    .on("select2-highlight", function(e) { log ("highlighted val="+ e.val+" choice="+ JSON.stringify(e.choice));})
-    .on("select2-selecting", function(e) { log ("selecting val="+ e.val+" choice="+ JSON.stringify(e.choice));})
-    .on("select2-removing", function(e) { log ("removing val="+ e.val+" choice="+ JSON.stringify(e.choice));})
-    .on("select2-removed", function(e) { log ("removed val="+ e.val+" choice="+ JSON.stringify(e.choice));})
-    .on("select2-loaded", function(e) { log ("loaded (data property omitted for brevity)");})
-    .on("select2-focus", function(e) { log ("focus");})
-    .on("select2-blur", function(e) { log ("blur");});
+    .on("change", function(e) { console.log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); })
+    .on("select2-opening", function() { console.log("opening"); })
+    .on("select2-open", function() { console.log("open"); })
+    .on("select2-close", function() { console.log("close"); })
+    .on("select2-highlight", function(e) { console.log("highlighted val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-selecting", function(e) { console.log("selecting val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-removing", function(e) { console.log("removing val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-removed", function(e) { console.log("removed val="+ e.val+" choice="+ JSON.stringify(e.choice));})
+    .on("select2-loaded", function(e) { console.log("loaded (data property omitted for brevity)");})
+    .on("select2-focus", function(e) { console.log("focus");})
+    .on("select2-blur", function(e) { console.log("blur");});
 ```
 
 ## Styling
@@ -110,7 +112,8 @@ This package provides no styles or assets to your app intentionally.
 
 All of the default select2 styles and assets are included in the `vendor` directory and can be loaded into your application via the following methods:
 
-1. Load files by path ( this assumes your less / css files are one dir up from your app root )
+1. Load files by path
+    * Assumes your less / css files are one dir up from your app root
 
 `@import "../packages/jquery-select2/vendor/select2/select2.css";`
 
@@ -121,3 +124,8 @@ $ cd public && ln -s ../packages/jquery-select2/vendor/select2 ./
 ```
 
 ## Contributing
+
+* [Report Bugs](https://github.com/LumaPictures/meteor-jquery-select2/issues/new)
+* [select2 Wiki](https://github.com/ivaynberg/select2/wiki)
+* [select2 Google Group](https://groups.google.com/forum/#!forum/select2)
+* [Meteor-Talk Announcement]()

@@ -1,17 +1,3 @@
 <template name="home">
-    {{#panel}}
-        {{#panelHeading icon="icon-menu5" title="Select2 Configurations" }}
-            {{#pullRight}}
-                {{#select2 placeholder="Choose a Country..." styles="select" tabindex="2"}}
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Cape Verde">Cape Verde</option>
-                {{/select2}}
-            {{/pullRight}}
-        {{/panelHeading}}
-        {{#panelBody}}
-            {{> selectsView }}
-        {{/panelBody}}
-    {{/panel}}
+    {{> select2ExamplesPanel }}
 </template>
