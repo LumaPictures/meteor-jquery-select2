@@ -46,6 +46,67 @@ If you need opt groups everything still works the same.
 {{/select2}}
 ```
 
+Generally I prefer to setup my initialization parameters in a template helper and pass in a complete initialization object.
+
+```coffeescript
+Template.taskForm.helpers
+  formSelectorDefaultOptions: -> return {
+    width: "100%"
+  }
+  taskTypeSelector: -> return {
+    placeholder: "Select a task type"
+    tabindex: 1
+    options: Template.taskForm.formSelectorDefaultOptions()
+  }
+```
+
+Example form using the selector defined above
+
+```html
+<template name="taskForm">
+    <form role="form">
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Tasksheet Entry <small class="display-block">Please select a task type.</small>
+                    {{#select2 taskTypeSelector }}
+                        <option value="art">Artist</option>
+                        <option value="dev">Dev</option>
+                        <option valule="sys">Systems</option>
+                        <option value="ops">Ops</option>
+                        <option value="mgmt">Management</option>
+                    {{/select2}}
+                </h6>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Hours</label>
+                        <input class="form-control" type="number" name="number">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Minutes</label>
+                        <input class="form-control" type="number" name="number">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Notes</label>
+                        <textarea rows="5" cols="5" class="limited form-control" placeholder="Limited to 100 characters"></textarea>
+                        <span class="help-block" id="limit-text">Field limited to 100 characters.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+        </div>
+    </form>
+</template>
+```
+
 ### Data Sources
 
 #### DOM
