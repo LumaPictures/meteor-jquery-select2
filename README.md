@@ -326,5 +326,5 @@ $ cd public && ln -s ../packages/jquery-select2/vendor/select2 ./
 
 * [Report Bugs](https://github.com/LumaPictures/meteor-jquery-select2/issues/new)
 * [select2 Wiki](https://github.com/ivaynberg/select2/wiki)
-* [select2 Google Group](https://groups.google.com/forum/#!forum/select2)
+* [select2 forum Announcement](https://groups.google.com/forum/#!topic/select2/C1yc2X7eaGo)
 * [Meteor-Talk Announcement](https://groups.google.com/forum/#!topic/meteor-talk/e6whzTDiRE0)
