@@ -1,3 +1,18 @@
 <template name="home">
-    {{> select2ExamplesPanelView }}
+  {{getGithubReadme name="meteor-jquery-select2" owner="LumaPictures"}}
+  {{#panel styles="panel-success" }}
+    {{#panelHeading icon="icon-github" title="README.md" }}
+      {{#panelIconGroup}}
+        {{> panelToggle }}
+      {{/panelIconGroup}}
+    {{/panelHeading}}
+    {{#panelBody}}
+      {{#if githubReadme}}
+        {{{githubReadme}}}
+      {{else}}
+        <h3>Loading...</h3>
+      {{/if}}
+    {{/panelBody}}
+  {{/panel}}
+  {{> select2ExamplesPanelView }}
 </template>
