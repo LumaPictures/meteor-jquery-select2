@@ -1,4 +1,5 @@
 <template name="home">
+  {{> select2ExamplesPanelView }}
   {{getGithubReadme name="meteor-jquery-select2" owner="LumaPictures"}}
   {{#panel styles="panel-success" }}
     {{#panelHeading icon="icon-github" title="README.md" }}
@@ -14,5 +15,4 @@
       {{/if}}
     {{/panelBody}}
   {{/panel}}
-  {{> select2ExamplesPanelView }}
 </template>
