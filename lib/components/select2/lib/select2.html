@@ -1,0 +1,15 @@
+<template name="select2">
+    <select
+        id="{{selector}}"
+        data-placeholder="{{placeholder}}"
+        class="{{styles}}"
+        tabindex="{{tabindex}}"
+        multiple="{{multiple}}">
+        {{#if placeholder }}
+            <option></option>
+        {{/if}}
+        {{#if UI.contentBlock }}
+            {{> UI.contentBlock }}
+        {{/if}}
+    </select>
+</template>
