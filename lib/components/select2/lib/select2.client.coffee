@@ -29,3 +29,6 @@ Template.select2.destroyed = ->
   instantiatedComponent = templateInstance.__component__
   instantiatedComponent.destroy()
   instantiatedComponent.log "destroyed", @
+
+# ##### events()
+Template.select2.events = {}
