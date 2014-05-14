@@ -22,6 +22,11 @@
         "tag": "v1.3.3",
         "commit": "bad1919563d230c97338afa7f6d70c9a6397d911"
       },
+      "luma-component": {
+        "git": "https://github.com/LumaPictures/meteor-luma-component",
+        "tag": "v0.0.1",
+        "commit": "2400401e55e3063047f5d70443a24b19d1779d2e"
+      },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
         "tag": "v0.2.5",
