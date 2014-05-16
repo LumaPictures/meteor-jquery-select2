@@ -216,7 +216,7 @@ A non trivial usage, and what is currently being used in the example app.
     {{#panel styles="panel-default select2-examples-panel" }}
         {{#panelHeading icon="icon-menu5" title="Select2" }}
             <div class="pull-left">
-                {{#select2 selector=selector tabindex="1"}}
+                {{#select2 id=selector tabindex="1"}}
                     {{#each options }}
                         <option value="{{value}}">{{label}}</option>
                     {{/each}}
