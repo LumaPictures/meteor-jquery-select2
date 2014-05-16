@@ -14,8 +14,8 @@
       },
       "luma-ui": {
         "git": "https://github.com/lumapictures/meteor-luma-ui.git",
-        "tag": "v0.1.18",
-        "commit": "3979751396c463f512c491980de6b2882a5b5dbb"
+        "tag": "v0.1.20",
+        "commit": "e36c4634eaaf0cb9b0ed51da4715e75cf4075979"
       },
       "githubReadme": {
         "git": "https://github.com/austinrivas/meteor-githubReadme.git",
@@ -24,8 +24,8 @@
       },
       "luma-component": {
         "git": "https://github.com/LumaPictures/meteor-luma-component",
-        "tag": "v0.0.1",
-        "commit": "2400401e55e3063047f5d70443a24b19d1779d2e"
+        "tag": "v0.0.2",
+        "commit": "9466026f77f9ba5f0e383a9b873b6b2ac61c5410"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

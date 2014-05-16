@@ -1,5 +1,5 @@
 class Select2Component extends Component
-  defaults =
+  defaults:
     minimumResultsForSearch: "5"
     width: "100%"
 
