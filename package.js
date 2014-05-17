@@ -29,17 +29,14 @@ Package.on_use(function (api, where) {
   ], [ 'client', 'server' ]);
 
   api.add_files([
-    'lib/mixins/base.mixin.coffee'
+    'lib/mixins/Base.mixin.coffee',
+    'lib/mixins/EventLogs.mixin.coffee'
+    /* ADD Select2Component Mixins here */
   ], [ 'client', 'server']);
 
   api.add_files([
     'lib/select2.server.coffee'
   ], [ 'server' ]);
-
-  api.add_files([
-    'lib/mixins/EventLogs.mixin.coffee'
-    /* ADD Select2Component Mixins here */
-  ], [ 'client' ]);
 
   api.add_files([
     'lib/select2.component.coffee'

@@ -40,47 +40,48 @@
 
 Select2Mixins.EventLogs =
   extended: ->
-    @include
-      events:
-        "change": ( event, template ) ->
-          template.log "event:change", {
-            val:event.val
-            added:event.added
-            removed:event.removed
-          }
+    if Meteor.isClient
+      @include
+        events:
+          "change select": ( event, template ) ->
+            template.log "event:change", {
+              val:event.val
+              added:event.added
+              removed:event.removed
+            }
 
-        "select2-opening": ( event, template ) -> template.log "event:opening"
+          "select2-opening": ( event, template ) -> template.log "event:opening"
 
-        "select2-open": ( event, template ) -> template.log "event:open"
+          "select2-open": ( event, template ) -> template.log "event:open"
 
-        "select2-close": ( event, template ) -> template.log "event:close"
+          "select2-close": ( event, template ) -> template.log "event:close"
 
-        "select2-highlight": ( event, template )->
-          template.log "event:highlighted", {
-            val: event.val
-            choice: event.choice
-          }
+          "select2-highlight": ( event, template )->
+            template.log "event:highlighted", {
+              val: event.val
+              choice: event.choice
+            }
 
-        "select2-selecting": ( event, template ) ->
-          template.log "event:selecting", {
-            val: event.val
-            choice: event.choice
-          }
+          "select2-selecting": ( event, template ) ->
+            template.log "event:selecting", {
+              val: event.val
+              choice: event.choice
+            }
 
-        "select2-removing": ( event, template ) ->
-          template.log "event:removing", {
-            val: event.val
-            choice: event.choice
-          }
+          "select2-removing": ( event, template ) ->
+            template.log "event:removing", {
+              val: event.val
+              choice: event.choice
+            }
 
-        "select2-removed": ( event, template ) ->
-          template.log "event:removed", {
-            val: event.val
-            choice: event.choice
-          }
+          "select2-removed": ( event, template ) ->
+            template.log "event:removed", {
+              val: event.val
+              choice: event.choice
+            }
 
-        "select2-loaded": ( event, template ) -> template.log "event:loaded (data property omitted for brevity)"
+          "select2-loaded": ( event, template ) -> template.log "event:loaded (data property omitted for brevity)"
 
-        "select2-focus": ( event, template ) -> template.log "event:focus"
+          "select2-focus": ( event, template ) -> template.log "event:focus"
 
-        "select2-blur": ( event, template ) -> template.log "event:blur"
+          "select2-blur": ( event, template ) -> template.log "event:blur"
