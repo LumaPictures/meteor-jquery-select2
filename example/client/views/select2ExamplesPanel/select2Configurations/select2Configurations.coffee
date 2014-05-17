@@ -21,10 +21,6 @@ Template.select2ConfigurationsView.helpers
     minimumResultsForSearch: "-1"
     width: "off"
   }
-  fullWidthSelect: -> return {
-    minimumResultsForSearch: "-1"
-    width: "100%"
-  }
   disabledSelect: -> return {
     disabled: true
   }

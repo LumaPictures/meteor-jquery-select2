@@ -1,28 +1,34 @@
-# # Select2 Component
-if Meteor.isClient
-  # Theses mixins are included, extend the component by creating your own mixins and merging them in here.
-  Select2Component = _.extend {},
-    Select2Mixins.Base,
-    Select2Mixins.Initialize,
-    Select2Mixins.Destroy,
-    Select2Mixins.Options,
-    Select2Mixins.Selector,
-    Select2Mixins.Utility,
-    Select2Mixins.Debug,
-    Select2Mixins.Placeholder
-    # Add additional client mixin namespaces here
+class Select2Component extends Component
+  if Meteor.isClient
+    @extend Select2Mixins.EventLogs
 
-  # The code below is an example of how to set some example default options for display and language options.
-  Select2Component.defaultOptions =
+  defaults:
     minimumResultsForSearch: "5"
-    width: 200
+    width: "100%"
 
-# Components are client only by default, but if you need to have a presence on the server you can define server mixins.
-else if Meteor.isServer
-  # `Select2Component = _.extend {}, Select2Mixins.Debug`
-  Select2Component = _.extend {},
-    Select2Mixins.Base,
-    Select2Mixins.Debug
-    # Add additional server mixin namespaces here
+  # ##### rendered()
+  rendered: ->
+    if @options then options = @options() else options = {}
+    @log "options", options
+    @data.select2 = $( "##{ @selector() }" ).select2 options
+    @addGetterSetter 'data', 'select2'
+    if @options
+      if @options().disabled is true then @disableSelect2()
+      if @options().readOnly is true then @readOnlySelect2()
+    super
 
-  Select2Component.defaultOptions = {}
+  # ##### disableSelect2()
+  disableSelect2: ->
+    @select2 $("##{ @selector() }").select2( "enable", false )
+
+  # ##### disableSelect2()
+  enableSelect2: ->
+    @select2 $("##{ @selector() }").select2( "enable", true )
+
+  # ##### readOnlySelect2()
+  readOnlySelect2: ->
+    @select2 $("##{ @selector() }").select2( "readonly", true )
+
+  # ##### writableSelect2()
+  writableSelect2: ->
+    @select2 $("##{ @selector() }").select2( "readonly", false )

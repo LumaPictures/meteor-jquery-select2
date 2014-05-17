@@ -5,7 +5,8 @@ Package.describe({
 Package.on_use(function (api, where) {
   api.use([
     'coffeescript',
-    'underscore'
+    'underscore',
+    'luma-component'
   ],[ 'client', 'server' ]);
 
   api.use([
@@ -28,8 +29,7 @@ Package.on_use(function (api, where) {
   ], [ 'client', 'server' ]);
 
   api.add_files([
-    'lib/components/select2/lib/mixins/base.mixin.coffee',
-    'lib/components/select2/lib/mixins/debug.mixin.coffee'
+    'lib/components/select2/lib/mixins/base.mixin.coffee'
   ], [ 'client', 'server']);
 
   api.add_files([
@@ -37,12 +37,7 @@ Package.on_use(function (api, where) {
   ], [ 'server' ]);
 
   api.add_files([
-    'lib/components/select2/lib/mixins/initialize.mixin.coffee',
-    'lib/components/select2/lib/mixins/destroy.mixin.coffee',
-    'lib/components/select2/lib/mixins/options.mixin.coffee',
-    'lib/components/select2/lib/mixins/selector.mixin.coffee',
-    'lib/components/select2/lib/mixins/utility.mixin.coffee',
-    'lib/components/select2/lib/mixins/placeholder.mixin.coffee'
+    'lib/components/select2/lib/mixins/EventLogs.mixin.coffee'
     /* ADD Select2Component Mixins here */
   ], [ 'client' ]);
 

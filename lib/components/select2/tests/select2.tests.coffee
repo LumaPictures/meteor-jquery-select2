@@ -1,3 +1,2 @@
-if Meteor.isClient
-  Tinytest.add "Select2 - default options", ( test ) ->
-    test.notEqual Template.select2.defaultOptions, undefined, "Expected defaultOptions to be defined on the client."
+Tinytest.add "Select2 - Write some tests bro", ( test ) ->
+  test.notEqual true, false, "Write some tests bro."
