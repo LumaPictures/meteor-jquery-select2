@@ -1,4 +1,7 @@
 class Select2Component extends Component
+  if Meteor.isClient
+    @extend Select2Mixins.EventLogs
+
   defaults:
     minimumResultsForSearch: "5"
     width: "100%"

@@ -37,7 +37,7 @@ Package.on_use(function (api, where) {
   ], [ 'server' ]);
 
   api.add_files([
-    'lib/components/select2/lib/mixins/placeholder.mixin.coffee'
+    'lib/components/select2/lib/mixins/EventLogs.mixin.coffee'
     /* ADD Select2Component Mixins here */
   ], [ 'client' ]);
 
