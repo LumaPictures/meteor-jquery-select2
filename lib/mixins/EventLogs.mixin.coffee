@@ -44,7 +44,6 @@ Select2Mixins.EventLogs =
       @include
         events:
           "change": ( event, template ) ->
-            console.log "change"
             template.log "event:change", {
               val: event.val
               added: event.added

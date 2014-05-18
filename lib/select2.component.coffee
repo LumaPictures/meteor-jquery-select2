@@ -8,7 +8,7 @@ class Select2Component extends Component
       if @options then options = @options() else options = {}
       @log "options", options
       @$ = $( @selector() ).select2 options
-      @log "$DOM", @$
+      @log "$", @$
       if @isDisabled() then @disableSelect2()
       if @isReadOnly() then @readOnlySelect2()
       super

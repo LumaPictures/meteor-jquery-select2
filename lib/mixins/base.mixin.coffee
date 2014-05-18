@@ -41,16 +41,20 @@ Select2Mixins =
 
           # ##### disableSelect2()
           disableSelect2: ->
-            @$.select2( "enable", false )
+            @$.select2 "enable", false
+            @log "disabled", true
 
           # ##### enableSelect2()
           enableSelect2: ->
             @$.select2 "enable", true
+            @log "enabled", true
 
           # ##### readOnlySelect2()
           readOnlySelect2: ->
-            @$.select2( "readonly", true )
+            @$.select2 "readonly", true
+            @log "readOnly", true
 
           # ##### writableSelect2()
           writableSelect2: ->
             @$.select2 "readonly", false
+            @log "writable", true
