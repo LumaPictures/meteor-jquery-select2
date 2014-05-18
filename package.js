@@ -18,7 +18,7 @@ Package.on_use(function (api, where) {
 
   /* Select2Component Vendor Assets */
   api.add_files([
-    'lib/components/select2/vendor/select2/select2.js'
+    'vendor/select2/select2.js'
   ], [ 'client' ]);
 
   /* Select2Component */
@@ -29,25 +29,22 @@ Package.on_use(function (api, where) {
   ], [ 'client', 'server' ]);
 
   api.add_files([
-    'lib/components/select2/lib/mixins/base.mixin.coffee'
+    'lib/mixins/Base.mixin.coffee',
+    'lib/mixins/EventLogs.mixin.coffee'
+    /* ADD Select2Component Mixins here */
   ], [ 'client', 'server']);
 
   api.add_files([
-    'lib/components/select2/lib/select2.server.coffee'
+    'lib/select2.server.coffee'
   ], [ 'server' ]);
 
   api.add_files([
-    'lib/components/select2/lib/mixins/EventLogs.mixin.coffee'
-    /* ADD Select2Component Mixins here */
-  ], [ 'client' ]);
-
-  api.add_files([
-    'lib/components/select2/lib/select2.component.coffee'
+    'lib/select2.component.coffee'
   ], [ 'client', 'server']);
 
   api.add_files([
-    'lib/components/select2/lib/select2.html',
-    'lib/components/select2/lib/select2.client.coffee'
+    'lib/select2.html',
+    'lib/select2.client.coffee'
   ], [ 'client' ]);
   /* END Select2Component */
 });
@@ -62,7 +59,7 @@ Package.on_test(function (api) {
 
   /* Select2Component Tests */
   api.add_files([
-    'lib/components/select2/tests/select2.tests.coffee'
+    'tests/select2.tests.coffee'
     /* ADD Select2Component Tests here */
   ], [ 'client', 'server' ]);
 });

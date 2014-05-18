@@ -1,8 +1,10 @@
 # # select2ExamplesPanelView
 
+panelBodySelectorId = "select2-examples-panel-selector"
+
 # ##### select2ExamplesPanelView.created()
 Template.select2ExamplesPanelView.created = ->
-  Session.setDefault Template.select2ExamplesPanelView.selector(), "select2ConfigurationsView"
+  Session.setDefault panelBodySelectorId, "select2ConfigurationsView"
 
 # ##### select2ExamplesPanelView.rendered()
 Template.select2ExamplesPanelView.rendered = -> return
@@ -12,10 +14,14 @@ Template.select2ExamplesPanelView.destroyed = -> return
 
 # ##### select2ExamplesPanelView.helpers()
 Template.select2ExamplesPanelView.helpers
-  selector: -> return "select2-examples-panel-selector"
-  selectorOptions: -> return { width: "off" }
+  panelBodySelector: -> return {
+    id: panelBodySelectorId
+    options:
+      width: "off"
+    tabindex: 1
+  }
   selectedView: ->
-    return Template[ Session.get Template.select2ExamplesPanelView.selector() ]
+    return Template[ Session.get panelBodySelectorId ]
   options: -> return [{
     value: "select2ConfigurationsView"
     label: "Configurations"
@@ -24,7 +30,9 @@ Template.select2ExamplesPanelView.helpers
     label: "Data Sources"
   }]
 
+events = {}
+events[ "change ##{ panelBodySelectorId }" ] = ( event, template ) ->
+  Session.set event.target.id, event.val
+
 # ##### select2ExamplesPanelView.events()
-Template.select2ExamplesPanelView.events
-  "change #select2-examples-panel-selector": ( event, template ) ->
-    Session.set event.target.id, event.val
+Template.select2ExamplesPanelView.events events
