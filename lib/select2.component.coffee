@@ -7,6 +7,7 @@ class Select2Component extends Component
     rendered: ->
       if @options then options = @options() else options = {}
       @log "options", options
+      @log "selector", @selector()
       @$ = $( @selector() ).select2 options
       @log "$", @$
       if @isDisabled() then @disableSelect2()
