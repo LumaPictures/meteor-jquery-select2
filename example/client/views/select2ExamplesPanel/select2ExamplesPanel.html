@@ -2,7 +2,7 @@
     {{#panel styles="panel-default select2-examples-panel" }}
         {{#panelHeading icon="icon-menu5" title="Select2" }}
             <div class="pull-left">
-                {{#select2 id=selector options=selectorOptions tabindex="1" debug="all" }}
+                {{#select2 panelBodySelector }}
                     {{#each options }}
                         <option value="{{value}}">{{label}}</option>
                     {{/each}}

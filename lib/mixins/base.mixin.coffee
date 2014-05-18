@@ -21,27 +21,36 @@
   ```
 ###
 
-Select2Mixins = {}
-Select2Mixins.Base =
-  extended: ->
-    if Meteor.isClient
-      @include
-        defaults:
-          minimumResultsForSearch: "5"
-          width: "100%"
+Select2Mixins =
+  Base:
+    extended: ->
+      if Meteor.isClient
+        @include
+          # ##### defaults
+          defaults:
+            minimumResultsForSearch: "5"
+            width: "100%"
 
-        # ##### disableSelect2()
-        disableSelect2: ->
-          @select2 $( @selector() ).select2( "enable", false )
+          # ##### isDisabled()
+          isDisabled: ->
+            if @options then @options().disabled or false
 
-        # ##### disableSelect2()
-        enableSelect2: ->
-          @select2 $( @selector() ).select2( "enable", true )
+          # ##### isReadOnly()
+          isReadOnly: ->
+            if @options then @options().readonly or false
 
-        # ##### readOnlySelect2()
-        readOnlySelect2: ->
-          @select2 $( @selector() ).select2( "readonly", true )
+          # ##### disableSelect2()
+          disableSelect2: ->
+            @$.select2( "enable", false )
 
-        # ##### writableSelect2()
-        writableSelect2: ->
-          @select2 $( @selector() ).select2( "readonly", false )
+          # ##### enableSelect2()
+          enableSelect2: ->
+            @$.select2 "enable", true
+
+          # ##### readOnlySelect2()
+          readOnlySelect2: ->
+            @$.select2( "readonly", true )
+
+          # ##### writableSelect2()
+          writableSelect2: ->
+            @$.select2 "readonly", false

@@ -43,11 +43,12 @@ Select2Mixins.EventLogs =
     if Meteor.isClient
       @include
         events:
-          "change select": ( event, template ) ->
+          "change": ( event, template ) ->
+            console.log "change"
             template.log "event:change", {
-              val:event.val
-              added:event.added
-              removed:event.removed
+              val: event.val
+              added: event.added
+              removed: event.removed
             }
 
           "select2-opening": ( event, template ) -> template.log "event:opening"
