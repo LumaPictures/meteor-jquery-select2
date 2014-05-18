@@ -160,7 +160,7 @@ Assuming you have a template view like this :
 ```html
 <template name="yourView">
     {{#panel}}
-        {{#select2 selector="country-selector" }}
+        {{#select2 id="country-selector" }}
             {{> countries }}
         {{/select2}}
     {{/panel}}
@@ -216,7 +216,7 @@ A non trivial usage, and what is currently being used in the example app.
     {{#panel styles="panel-default select2-examples-panel" }}
         {{#panelHeading icon="icon-menu5" title="Select2" }}
             <div class="pull-left">
-                {{#select2 id=selector tabindex="1"}}
+                {{#select2 id=id tabindex="1"}}
                     {{#each options }}
                         <option value="{{value}}">{{label}}</option>
                     {{/each}}
@@ -232,7 +232,7 @@ A non trivial usage, and what is currently being used in the example app.
 
 ```coffeescript
 Template.select2ExamplesPanelView.helpers
-  selector: -> return "select2-examples-panel-selector"
+  id: -> return "select2-examples-panel-selector"
   selectedView: ->
     return Template[ Session.get Template.select2ExamplesPanelView.selector() ]
   options: -> return [{
