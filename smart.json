@@ -3,7 +3,7 @@
   "description": "A Blaze UI select2 component that supports reactive search.",
   "homepage": "https://github.com/LumaPictures/meteor-jquery-select2",
   "author": "Austin Rivas <austinrivas@gmail.com> (https://github.com/austinrivas)",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "git": "https://github.com/LumaPictures/meteor-jquery-select2",
   "packages": {
     "luma-component": {}
