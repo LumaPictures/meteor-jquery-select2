@@ -22,6 +22,10 @@ Package.on_use(function (api, where) {
   ], [ 'client' ]);
 
   /* Select2Component */
+  api.add_files([
+    'lib/select2.html'
+  ], [ 'client' ]);
+
   api.export([
     'Select2Mixins',
     'Select2Component'
@@ -35,17 +39,8 @@ Package.on_use(function (api, where) {
   ], [ 'client', 'server']);
 
   api.add_files([
-    'lib/select2.server.coffee'
-  ], [ 'server' ]);
-
-  api.add_files([
     'lib/select2.component.coffee'
   ], [ 'client', 'server']);
-
-  api.add_files([
-    'lib/select2.html',
-    'lib/select2.client.coffee'
-  ], [ 'client' ]);
   /* END Select2Component */
 });
 

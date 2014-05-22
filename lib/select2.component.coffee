@@ -20,3 +20,13 @@ class Select2Component extends Component
   created: ->
     if Meteor.isClient
       super
+
+if Meteor.isClient
+  # # Select2 Client
+  # ##### Extending the Template
+  # `Template.select2` is extended with `Select2Component`'s methods so that the template callbacks can execute
+  # `Select2Component` instance methods. In truth `Template.select2` is the actual `Select2Component`.
+
+  # ##### created()
+  # This is the component constructor.
+  Template.select2.created = -> new Select2Component @
