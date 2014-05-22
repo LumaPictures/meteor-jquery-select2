@@ -11,7 +11,7 @@ class Select2Component extends Component
       @log "selector", @selector()
       @$ = $( @selector() ).select2 options
       @log "$", @$
-      @setSelected @selected()
+      @setSelected @selected() if @selected
       if @isDisabled() then @disableSelect2()
       if @isReadOnly() then @readOnlySelect2()
       super
