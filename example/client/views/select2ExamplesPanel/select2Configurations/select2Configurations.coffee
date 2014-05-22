@@ -1,7 +1,8 @@
 # # select2ConfigurationsView
 
 # ##### select2ConfigurationsView.created()
-Template.select2ConfigurationsView.created = -> return
+Template.select2ConfigurationsView.created = ->
+  Session.set "reactive-select", "AK"
 
 # ##### select2ConfigurationsView.rendered()
 Template.select2ConfigurationsView.rendered = -> return
@@ -38,6 +39,13 @@ Template.select2ConfigurationsView.helpers
     maximumSelectionSize: 2
     width: "100%"
   }
+  reactiveSelection: -> return Session.get "reactive-select"
 
 # ##### select2ConfigurationsView.events()
-Template .select2ConfigurationsView.events {}
+Template .select2ConfigurationsView.events
+  "click .reactive-select": ( event, template ) ->
+    event.preventDefault()
+    Session.set "reactive-select", $( event.target ).data "button"
+
+  "change #reactive-select": ( event, template ) ->
+    Session.set "reactive-select", event.val

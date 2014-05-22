@@ -58,3 +58,12 @@ Select2Mixins =
           writableSelect2: ->
             @$.select2 "readonly", false
             @log "writable", true
+
+          setSelected: ( value ) ->
+            unless @selected
+              @data.selected = null
+              @addGetterSetter "data", "selected"
+            @selected value
+            if @$.select2
+              @$.select2 "val", @selected()
+              @log "selected", @selected()

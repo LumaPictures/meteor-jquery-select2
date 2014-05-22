@@ -19,7 +19,6 @@ Template.select2ExamplesPanelView.helpers
     options:
       width: "off"
     tabindex: 1
-    debug: "all"
   }
   selectedView: ->
     return Template[ Session.get panelBodySelectorId ]
