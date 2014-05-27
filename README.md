@@ -25,11 +25,11 @@ $ mrt && meteor test-packages jquery-select2
 Initializing a select2 component is easy, just include the following block helper in one of your templates.
 
 ```html
-{{#select2 placeholder="Choose a Country" }}
+{{#Select2 placeholder="Choose a Country" }}
     {{#each country }}
         <option value="{{countryCode}}">{{name}}</option>
     {{/each}}
-{{/select2}}
+{{/Select2}}
 ```
 
 If you need opt groups everything still works the same.
@@ -116,20 +116,59 @@ The easiest and least flexible way. Just place your options in the `select2` blo
 If you are not using a placeholder be sure to specify which option is selected by default or the `select2` component will be empty.
 
 ```html
-{{#select2}}
+{{#Select2}}
     <option value="option1" selected>Option 1</option>
     <option value="option2">Option 2</option>
-{{/select2}}
+{{/Select2}}
 ```
 
-#### Array ( [milestone v0.2](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=1&state=open) )
+#### Array
 
 This method will cover most of your use cases, is quite flexible, and pretty freakin simple.
 
-By default the first element in the array will be selected unless you specify a placeholder.
+In order to use an array data source to populate the select2 component you must specify the `data` property of the select2 `options` object.
+
+```coffeescript
+Template.<yourTemplate>.helpers
+    ArraySource: -> return {
+
+      # Placeholder
+      placeholder: "Select an Option..."
+
+      # Tab Index
+      tabindex: 3
+
+      # Select2 Options
+      options:
+        data:
+          # The results used to populate the Select2 Component
+          results: [{
+            id: 0
+            tag: "enhancement"
+          }, {
+            id: 1
+            tag: "bug"
+          }, {
+            id: 2
+            tag: "duplicate"
+          }, {
+            id: 3
+            tag: "invalid"
+          }, {
+            id: 4
+            tag: "wontfix"
+          }]
+          # The display text for each option
+          text: ( item ) -> item.tag
+        # Preformat the selection
+        formatSelection: ( item ) -> item.tag
+        # Preformat result
+        formatResult: ( item ) -> item.tag
+    }
+```
 
 ```html
-{{> select2 optionsArray=optionsArray }}
+{{> Select2 ArraySource }}
 ```
 
 #### Subscription ( [milestone v0.3](https://github.com/LumaPictures/meteor-jquery-select2/issues?milestone=2&state=open) )
