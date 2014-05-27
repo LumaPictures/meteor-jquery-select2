@@ -1,5 +1,5 @@
 class Select2Component extends Component
-  __name__: "Select2Component"
+  __name__: "Select2"
   @extend Select2Mixins.Base
   @extend Select2Mixins.EventLogs
 
@@ -16,11 +16,6 @@ class Select2Component extends Component
       if @isReadOnly() then @readOnlySelect2()
       super
 
-  # ##### created()
-  created: ->
-    if Meteor.isClient
-      super
-
 if Meteor.isClient
   # # Select2 Client
   # ##### Extending the Template
@@ -29,4 +24,4 @@ if Meteor.isClient
 
   # ##### created()
   # This is the component constructor.
-  Template.select2.created = -> new Select2Component @
+  Template.Select2.created = -> new Select2Component @

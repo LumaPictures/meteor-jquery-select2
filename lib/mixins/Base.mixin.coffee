@@ -31,6 +31,14 @@ Select2Mixins =
             minimumResultsForSearch: "5"
             width: "100%"
 
+          # ##### isDomSource()
+          isDomSource: ->
+            if @options
+              if @options().data
+                return false
+              else return true
+            else return true
+
           # ##### isDisabled()
           isDisabled: ->
             if @options then @options().disabled or false

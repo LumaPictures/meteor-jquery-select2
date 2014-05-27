@@ -1,16 +1,26 @@
-<template name="select2">
-    {{ self.setSelected selected }}
+<template name="Select2">
+  {{ self.setSelected selected }}
+  {{#if self.isDomSource }}
     <select
-        id="{{id}}"
-        data-placeholder="{{placeholder}}"
-        class="{{styles}}"
-        tabindex="{{tabindex}}"
-        multiple="{{multiple}}">
-        {{#if placeholder }}
-            <option></option>
-        {{/if}}
-        {{#if UI.contentBlock }}
-            {{> UI.contentBlock }}
-        {{/if}}
+      id="{{id}}"
+      data-placeholder="{{placeholder}}"
+      class="{{styles}}"
+      tabindex="{{tabindex}}"
+      multiple="{{multiple}}">
+      {{#if placeholder }}
+        <option></option>
+      {{/if}}
+      {{#if UI.contentBlock }}
+        {{> UI.contentBlock }}
+      {{/if}}
     </select>
+  {{else}}
+    <input
+      id="{{id}}"
+      data-placeholder="{{placeholder}}"
+      class="{{styles}}"
+      tabindex="{{tabindex}}"
+      type="hidden"
+    />
+  {{/if}}
 </template>

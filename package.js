@@ -23,7 +23,7 @@ Package.on_use(function (api, where) {
 
   /* Select2Component */
   api.add_files([
-    'lib/select2.html'
+    'lib/Select2.html'
   ], [ 'client' ]);
 
   api.export([
@@ -39,7 +39,7 @@ Package.on_use(function (api, where) {
   ], [ 'client', 'server']);
 
   api.add_files([
-    'lib/select2.component.coffee'
+    'lib/Select2.component.coffee'
   ], [ 'client', 'server']);
   /* END Select2Component */
 });

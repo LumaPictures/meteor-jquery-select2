@@ -16,12 +16,14 @@ Template.select2ExamplesPanelView.destroyed = -> return
 Template.select2ExamplesPanelView.helpers
   panelBodySelector: -> return {
     id: panelBodySelectorId
+    selected : Session.get panelBodySelectorId
     options:
       width: "off"
     tabindex: 1
   }
-  selectedView: ->
-    return Template[ Session.get panelBodySelectorId ]
+
+  selectedView: -> return Template[ Session.get panelBodySelectorId ]
+
   options: -> return [{
     value: "select2ConfigurationsView"
     label: "Configurations"

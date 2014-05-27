@@ -1,16 +1,16 @@
 <template name="select2ExamplesPanelView">
-    {{#panel styles="panel-default select2-examples-panel" }}
-        {{#panelHeading icon="icon-menu5" title="Select2" }}
-            <div class="pull-left">
-                {{#select2 panelBodySelector }}
-                    {{#each options }}
-                        <option value="{{value}}">{{label}}</option>
-                    {{/each}}
-                {{/select2}}
-            </div>
-        {{/panelHeading}}
-        {{#panelBody}}
-            {{> selectedView }}
-        {{/panelBody}}
-    {{/panel}}
+  {{#panel styles="panel-default select2-examples-panel" }}
+    {{#panelHeading icon="icon-menu5" title="Select2" }}
+      <div class="pull-left">
+        {{#Select2 panelBodySelector }}
+          {{#each options }}
+            <option value="{{value}}">{{label}}</option>
+          {{/each}}
+        {{/Select2}}
+      </div>
+    {{/panelHeading}}
+    {{#panelBody}}
+      {{> selectedView }}
+    {{/panelBody}}
+  {{/panel}}
 </template>
