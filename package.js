@@ -5,8 +5,7 @@ Package.describe({
 Package.on_use(function (api, where) {
   api.use([
     'coffeescript',
-    'underscore',
-    'luma-component'
+    'underscore'
   ],[ 'client', 'server' ]);
 
   api.use([
@@ -23,24 +22,12 @@ Package.on_use(function (api, where) {
 
   /* Select2Component */
   api.add_files([
-    'lib/Select2.html'
+    'lib/select2.html'
   ], [ 'client' ]);
 
-  api.export([
-    'Select2Mixins',
-    'Select2Component'
-    /* ADD Select2 Exports here */
-  ], [ 'client', 'server' ]);
-
   api.add_files([
-    'lib/mixins/Base.mixin.coffee',
-    'lib/mixins/EventLogs.mixin.coffee'
-    /* ADD Select2Component Mixins here */
-  ], [ 'client', 'server']);
-
-  api.add_files([
-    'lib/Select2.component.coffee'
-  ], [ 'client', 'server']);
+    'lib/select2.component.coffee'
+  ], [ 'client' ]);
   /* END Select2Component */
 });
 
