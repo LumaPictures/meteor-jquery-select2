@@ -4,13 +4,10 @@ Template.Select2.rendered = ->
   defaults =
     minimumResultsForSearch: "5"
     width: "100%"
-  $( '#'+@data.id ).select2 _.defaults @data.options, defaults
-  enabled = @data.options.disabled or true
-  readonly = @data.options.readonly or false
-  selected = [] unless _.isArray @data.selected and @data.selected.length
-  $( '#'+@data.id ).select2 "enable", enabled
-  $( '#'+@data.id ).select2 "readonly", readonly
-  $( '#'+@data.id ).select2 "val", selected
+  $select2 = $( 'select#'+@data.id ).select2 _.defaults @data.options, defaults
+  $select2.select2 "enable", @data.options.disabled if @data.options.disabled
+  $select2.select2 "readonly", @data.options.readonly if @data.options.readonly
+  $select2.select2 "val", @data.selected if @data.selected
 
 Template.Select2.destroyed = ->
   $('body .select2-hidden-accessible').remove()
