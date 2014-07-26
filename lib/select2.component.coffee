@@ -11,5 +11,3 @@ Template.Select2.rendered = ->
 
 Template.Select2.destroyed = ->
   $('body .select2-hidden-accessible').remove()
-  $('body .select2-sizer').remove()
-  $('body .select2-drop').remove()
